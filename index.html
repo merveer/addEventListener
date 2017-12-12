@@ -49,7 +49,8 @@
     }
 
     divs.forEach(div => div.addEventListener('click', logText, {
-        capture: true // event goes down to the element
+        capture: false, // event goes down to the element
+        once: true // you can click only once - unbind itself
     }));
 </script>
 </body>
