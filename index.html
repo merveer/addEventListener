@@ -43,10 +43,14 @@
 
     function logText(e) {
         console.log(this.classList.value);
+        e.stopPropagation(); //stop bubbling
         //when you click coral you also click thistle
+        //event bubbles up from the element
     }
 
-    divs.forEach(div => div.addEventListener('click', logText));
+    divs.forEach(div => div.addEventListener('click', logText, {
+        capture: true // event goes down to the element
+    }));
 </script>
 </body>
 </html>
